@@ -32,9 +32,9 @@ Roll the dice with a click and enjoy smooth animations along with a fun celebrat
 
 ---
 
-## 📸 Demo
+## Live  Demo
 
-
+🔗 https://diceroller-app.netlify.app/
 
 ---
 
@@ -81,7 +81,7 @@ npm start
 
 ## 👩‍💻 Author
 
-**Salma Shaik**
-Computer Science and Engineering Student
+**Salma Shaik**  
+Computer Science and Engineering Student 
 
 🔗 GitHub: https://github.com/salmashaik45
