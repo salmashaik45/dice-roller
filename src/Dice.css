@@ -1,0 +1,309 @@
+/* Dice.css - Perfect Fit Dice Roller Styling */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Fredoka+One&display=swap');
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+/* Global Styles */
+.dice-container {
+  text-align: center;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.dice-container::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.dice-container::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* Content Wrapper */
+.dice-content {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Header Styles */
+.dice-container h1 {
+  color: #667eea;
+  font-family: 'Fredoka One', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 0px rgba(102, 126, 234, 0.1);
+  position: relative;
+  z-index: 1;
+  letter-spacing: 1px;
+}
+
+/* Dice Image Styles */
+.dice-image {
+  margin: 25px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.dice-image img {
+  width: 150px;
+  height: 150px;
+  transition: transform 0.5s ease;
+  filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.15));
+  border-radius: 15px;
+}
+
+.dice-image img.rolling {
+  animation: rollAnimation 1s ease-in-out;
+}
+
+@keyframes rollAnimation {
+  0% { 
+    transform: rotate(0deg) scale(1); 
+  }
+  25% { 
+    transform: rotate(90deg) scale(1.1); 
+  }
+  50% { 
+    transform: rotate(180deg) scale(1.2); 
+  }
+  75% { 
+    transform: rotate(270deg) scale(1.1); 
+  }
+  100% { 
+    transform: rotate(360deg) scale(1); 
+  }
+}
+
+/* Button Styles */
+.roll-button {
+  padding: 16px 35px;
+  font-size: 1.2rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  background: linear-gradient(to right, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 20px 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.5px;
+}
+
+.roll-button:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(102, 126, 234, 0.4);
+  background: linear-gradient(to right, #764ba2, #667eea);
+}
+
+.roll-button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.roll-button:disabled {
+  background: linear-gradient(to right, #cccccc, #aaaaaa);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Text Styles */
+.rolling-text {
+  color: #ff7e5f;
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin: 15px 0;
+  font-family: 'Fredoka One', cursive;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8);
+}
+
+.result-text {
+  color: #667eea;
+  font-size: 1.4rem;
+  margin: 15px 0;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dice-content {
+    padding: 25px 20px;
+  }
+  
+  .dice-container h1 {
+    font-size: 2.2rem;
+  }
+  
+  .dice-image img {
+    width: 130px;
+    height: 130px;
+  }
+  
+  .roll-button {
+    padding: 14px 30px;
+    font-size: 1.1rem;
+  }
+  
+  .rolling-text,
+  .result-text {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dice-container {
+    padding: 15px;
+  }
+  
+  .dice-content {
+    padding: 20px 15px;
+  }
+  
+  .dice-container h1 {
+    font-size: 2rem;
+  }
+  
+  .dice-image img {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .roll-button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    margin: 15px 0;
+  }
+  
+  .rolling-text,
+  .result-text {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+}
+
+@media (max-height: 700px) {
+  .dice-content {
+    padding: 20px;
+  }
+  
+  .dice-image {
+    margin: 15px 0;
+  }
+  
+  .dice-image img {
+    width: 110px;
+    height: 110px;
+  }
+  
+  .roll-button {
+    margin: 15px 0;
+  }
+}
+
+/* Animation for text */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.rolling-text,
+.result-text {
+  animation: fadeIn 0.5s ease;
+}
+
+/* Decorative elements */
+.dice-decoration {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  z-index: 1;
+}
+
+.deco-1 {
+  top: 15%;
+  left: 15%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.deco-2 {
+  top: 65%;
+  right: 15%;
+  animation: float 8s ease-in-out infinite;
+}
+
+.deco-3 {
+  bottom: 20%;
+  left: 20%;
+  animation: float 7s ease-in-out infinite;
+}
+
+.deco-4 {
+  top: 25%;
+  right: 25%;
+  animation: float 9s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(10deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Celebration animation for rolling a 6 */
+@keyframes celebrate {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.celebrate {
+  animation: celebrate 0.5s ease-in-out;
+}
